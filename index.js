@@ -19,3 +19,11 @@ btnCalcular.addEventListener('click', () => {
     O volume do copo é: ${copo.calcularVolume().toFixed(2)}<br>
     Classificação do volume: ${classificacaoVolume}`
 })
+
+let btnLimpar = document.getElementById('btnLimpar')
+btnLimpar.addEventListener('click', () => {
+    document.getElementById('raioMaior').value = ''
+    document.getElementById('raioMenor').value = ''
+    document.getElementById('altura').value = ''
+    resposta.innerHTML = ''
+})
