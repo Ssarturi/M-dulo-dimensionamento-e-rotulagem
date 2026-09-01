@@ -1,3 +1,4 @@
+import './style.css';
 const Copo = require('./models/Copo')
 
 let resposta = document.getElementById('resposta')
