@@ -1,28 +1,54 @@
-class Copo{
-    constructor(raioMaior, raioMenor, altura, geratriz) {
-        this.raioMaior = raioMaior
-        this.raioMenor = raioMenor
-        this.altura = altura
-        this.geratriz = geratriz
+class Copo {
+    constructor(raioMaior, raioMenor, altura) {
+        this.raioMaior = raioMaior;
+        this.raioMenor = raioMenor;
+        this.altura = altura;
     }
 
-    calcularGeratriz(raioMaior, raioMenor, altura){
-        return Math.sqrt(altura ** 2 + (raioMaior - raioMenor) ** 2);
+    calcularGeratriz() {
+        return Math.sqrt(
+            this.altura ** 2 +
+            (this.raioMaior - this.raioMenor) ** 2
+        );
     }
 
-    calcularAreaBaseMenor(raioMenor){
-        return Math.PI * (raioMenor * raioMenor)
+    calcularAreaBaseMenor() {
+        return Math.PI * this.raioMenor ** 2;
     }
 
-    calcularAreaBaseMaior(raioMaior){
-        return Math.PI * (raioMaior * raioMaior)
+    calcularAreaBaseMaior() {
+        return Math.PI * this.raioMaior ** 2;
     }
 
-    calcularAreaLateral(raioMenor, geratriz,raioMaior){
-        return raioMenor * geratriz * (raioMaior + raioMenor)
+    calcularAreaLateral() {
+        const geratriz = this.calcularGeratriz();
+
+        return Math.PI *
+            geratriz *
+            (this.raioMaior + this.raioMenor);
     }
 
-    calcularVolume(raioMenor, raioMaior, altura){
-        return ((raioMenor * altura) / 3) * ((raioMaior * raioMaior) + raioMaior * raioMenor + (raioMenor * raioMenor))
+    calcularVolume() {
+        return (
+            Math.PI * this.altura / 3
+        ) * (
+            this.raioMaior ** 2 +
+            this.raioMaior * this.raioMenor +
+            this.raioMenor ** 2
+        );
+    }
+
+    classificarVolume() {
+        const volume = this.calcularVolume();
+
+        if (volume < 180) {
+            return "Copo dose (cafezinho)";
+        } else if (volume < 350) {
+            return "Copo padrão (Água/Chá)";
+        } else {
+            return "Copo grande (Suco/Refrigerante)";
+        }
     }
 }
+
+module.exports = Copo;
