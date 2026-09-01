@@ -18,6 +18,7 @@ btnCalcular.addEventListener('click', () => {
     A área da base maior é: ${copo.calcularAreaBaseMaior().toFixed(2)}<br>
     A área lateral é: ${copo.calcularAreaLateral().toFixed(2)}<br>
     O volume do copo é: ${copo.calcularVolume().toFixed(2)}<br>
+    A área total do copo é: ${copo.calcularAreaTotal().toFixed(2)}<br>
     Classificação do volume: ${classificacaoVolume}`
 })
 

@@ -49,6 +49,14 @@ class Copo {
             return "Copo grande (Suco/Refrigerante)";
         }
     }
+
+    calcularAreaTotal(){
+        const areaBaseMaior = this.calcularAreaBaseMaior();
+        const areaBaseMenor = this.calcularAreaBaseMenor();
+        const areaLateral = this.calcularAreaLateral();
+        
+        return areaBaseMaior + areaBaseMenor + areaLateral;
+    }
 }
 
 module.exports = Copo;
